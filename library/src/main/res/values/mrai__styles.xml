@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Widget">
+    </style>
+
+    <style name="Widget.MiniRefreshActionItem">
+        <item name="refreshActionItemBackground">?android:attr/actionBarItemBackground</item>
+    </style>
+
+    <style name="Widget.MiniRefreshActionItem.Light">
+        <item name="progressIndicatorForegroundColor">#9333</item>
+        <item name="progressIndicatorBackgroundColor">#1333</item>
+        <item name="refreshActionItemIcon">@drawable/ic_action_reload_holo_light</item>
+    </style>
+
+    <style name="Widget.MiniRefreshActionItem.Dark">
+        <item name="progressIndicatorForegroundColor">#CFFF</item>
+        <item name="progressIndicatorBackgroundColor">#3FFF</item>
+        <item name="refreshActionItemIcon">@drawable/ic_action_reload_holo_dark</item>
+    </style>
+
+</resources>

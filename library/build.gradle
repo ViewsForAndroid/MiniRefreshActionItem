@@ -1,0 +1,40 @@
+apply plugin: 'android-library'
+
+dependencies {
+    compile "com.android.support:support-v4:19.1.0"
+    compile "com.android.support:appcompat-v7:19.1.0"
+}
+
+android {
+    compileSdkVersion 19
+    buildToolsVersion "19.0.3"
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+
+    def versionFile = file('version.properties')
+    if (!versionFile.canRead()) {
+        throw new GradleException('Could not read version.properties!')
+    }
+    def Properties versionProperties = new Properties();
+    versionProperties.load(new FileInputStream(versionFile));
+
+    def versionMajor = versionProperties['MAJOR'].toInteger();
+    def versionMinor = versionProperties['MINOR'].toInteger();
+    def versionPatch = versionProperties['PATCH'].toInteger();
+
+    defaultConfig {
+        minSdkVersion androidMinSdkVersion
+        targetSdkVersion androidTargetSdkVersion
+        versionCode versionMajor * 10000 + versionMinor * 1000 + versionPatch * 100
+        versionName "${versionMajor}.${versionMinor}.${versionPatch}"
+    }
+    buildTypes {
+        release {
+            runProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+}

@@ -1,0 +1,29 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven {
+            url "https://oss.sonatype.org/content/repositories/snapshots"
+        }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:0.9.+'
+    }
+}
+
+allprojects {
+    repositories {
+        mavenCentral()
+        maven {
+            url "http://www.bugsense.com/gradle/"
+        }
+    }
+}
+
+subprojects {
+    ext {
+        androidMinSdkVersion = 14
+        androidTargetSdkVersion = 19
+        androidCompileSdkVersion = 19
+        androidBuildToolsVersion = '19.0.3'
+    }
+}

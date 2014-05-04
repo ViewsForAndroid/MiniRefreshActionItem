@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="@dimen/mrai__action_bar_default_height"
+             android:layout_height="@dimen/mrai__action_bar_default_height">
+
+    <ImageView
+            android:id="@id/refresh_button"
+            android:scaleType="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/mrai__action_bar_icon_vertical_padding"/>
+
+    <ProgressBar
+            android:id="@+id/indeterminate_progress_indicator"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/mrai__action_bar_icon_vertical_padding"
+            android:indeterminate="true"/>
+
+</FrameLayout>
